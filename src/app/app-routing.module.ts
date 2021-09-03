@@ -10,6 +10,7 @@ const routes: Routes = [
     {
         path: '',
         component: ProductsComponent,
+        pathMatch: 'full',
     },
     {
         path: 'profile',

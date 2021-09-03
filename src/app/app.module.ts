@@ -10,8 +10,11 @@ import { LoginButtonComponent } from './components/login-button/login-button.com
 import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 import { SignupButtonComponent } from './components/signup-button/signup-button.component';
 import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 
 import { AuthModule } from '@auth0/auth0-angular';
+import { FormsModule } from '@angular/forms';
 import { environment as env } from 'src/environments/environment';
 import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
 import { LoadingComponent } from './components/loading/loading.component';
@@ -21,6 +24,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductComponent } from './components/product/product.component';
+import { QuantitySelectorComponent } from './components/quantity-selector/quantity-selector.component';
 
 @NgModule({
     declarations: [
@@ -39,16 +43,28 @@ import { ProductComponent } from './components/product/product.component';
         CartComponent,
         OrdersComponent,
         ProductComponent,
+        QuantitySelectorComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
+        FormsModule,
+        HttpClientModule,
         AuthModule.forRoot({
             ...env.auth,
+            httpInterceptor: {
+                allowedList: [],
+            },
         }),
     ],
-    providers: [],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthHttpInterceptor,
+            multi: true,
+        },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
