@@ -17,8 +17,6 @@ export class ProductService {
     }
 
     addProduct(newProduct: Product): Observable<Product> {
-        console.log('[Product service] : inside addProduct');
-
         const body = {
             productName: newProduct.name,
             price: newProduct.price,
@@ -30,6 +28,12 @@ export class ProductService {
         return this.httpClient.post<Product>(
             `${env.dev.serverUrl}/api/products/addProduct`,
             body
+        );
+    }
+
+    deleteProduct(product: Product): Observable<string> {
+        return this.httpClient.delete<string>(
+            `${env.dev.serverUrl}/api/products/deleteProduct/${product.id}`
         );
     }
 }

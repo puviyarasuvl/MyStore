@@ -29,6 +29,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteProductComponent } from './components/delete-product/delete-product.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         QuantitySelectorComponent,
         AdminComponent,
         AddProductComponent,
+        DeleteProductComponent,
     ],
     imports: [
         BrowserModule,
@@ -62,7 +64,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AuthModule.forRoot({
             ...env.auth,
             httpInterceptor: {
-                allowedList: [`${env.dev.serverUrl}/api/products/addProduct`],
+                allowedList: [
+                    `${env.dev.serverUrl}/api/products/addProduct`,
+                    `${env.dev.serverUrl}/api/products/deleteProduct/*`,
+                ],
             },
         }),
     ],
