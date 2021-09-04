@@ -24,7 +24,6 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductComponent } from './components/product/product.component';
-import { QuantitySelectorComponent } from './components/quantity-selector/quantity-selector.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -48,7 +47,6 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
         CartComponent,
         OrdersComponent,
         ProductComponent,
-        QuantitySelectorComponent,
         AdminComponent,
         AddProductComponent,
         DeleteProductComponent,
@@ -67,6 +65,8 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
                 allowedList: [
                     `${env.dev.serverUrl}/api/products/addProduct`,
                     `${env.dev.serverUrl}/api/products/deleteProduct/*`,
+                    `${env.dev.serverUrl}/api/orders/addProduct`,
+                    `${env.dev.serverUrl}/api/dashboard/cart`,
                 ],
             },
         }),

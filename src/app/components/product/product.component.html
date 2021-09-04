@@ -5,7 +5,18 @@
     <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">$ {{ product.price }}</p>
-        <app-quantity-selector></app-quantity-selector><br /><br />
-        <a href="#!" class="btn btn-primary">Button</a>
+        <form (ngSubmit)="addProductToCart(product)">
+            <input
+                class="qty-input"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="100"
+                [(ngModel)]="quantity"
+            />
+            <br />
+            <button type="submit" class="btn btn-primary">Add to cart</button>
+        </form>
     </div>
 </div>

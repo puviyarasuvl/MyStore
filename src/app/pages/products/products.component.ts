@@ -11,6 +11,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ProductsComponent implements OnInit {
     products: Product[] = [];
     getError: string = '';
+    addedToCart: boolean = false;
+    addError: string = '';
 
     constructor(
         private productService: ProductService,
@@ -33,5 +35,21 @@ export class ProductsComponent implements OnInit {
 
     resetGetError(): void {
         this.getError = '';
+    }
+
+    addToCartSuccess(): void {
+        this.addedToCart = true;
+    }
+
+    resetAddedToCart(): void {
+        this.addedToCart = false;
+    }
+
+    addToCartError(error: string): void {
+        this.addError = error;
+    }
+
+    resetAddError(): void {
+        this.addError = '';
     }
 }
