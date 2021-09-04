@@ -36,4 +36,13 @@
             Orders
         </a>
     </div>
+    <div class="nav-item px-3" *ngIf="email === 'admin@mystore.com'">
+        <a
+            routerLink="/admin"
+            class="nav-link"
+            routerLinkActive="router-link-exact-active"
+        >
+            Admin
+        </a>
+    </div>
 </div>

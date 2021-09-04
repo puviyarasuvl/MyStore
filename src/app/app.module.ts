@@ -25,6 +25,10 @@ import { CartComponent } from './pages/cart/cart.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductComponent } from './components/product/product.component';
 import { QuantitySelectorComponent } from './components/quantity-selector/quantity-selector.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -44,17 +48,21 @@ import { QuantitySelectorComponent } from './components/quantity-selector/quanti
         OrdersComponent,
         ProductComponent,
         QuantitySelectorComponent,
+        AdminComponent,
+        AddProductComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
         FormsModule,
+        NgxSpinnerModule,
+        BrowserAnimationsModule,
         HttpClientModule,
         AuthModule.forRoot({
             ...env.auth,
             httpInterceptor: {
-                allowedList: [],
+                allowedList: [`${env.dev.serverUrl}/api/products/addProduct`],
             },
         }),
     ],
