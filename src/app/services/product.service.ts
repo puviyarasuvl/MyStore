@@ -16,12 +16,18 @@ export class ProductService {
         );
     }
 
+    getProductById(productId: number): Observable<Product> {
+        return this.httpClient.get<Product>(
+            `${env.dev.serverUrl}/api/products/getProduct/${productId}`
+        );
+    }
+
     addProduct(newProduct: Product): Observable<Product> {
         const body = {
             productName: newProduct.name,
             price: newProduct.price,
             category: newProduct.category,
-            descrption: newProduct.description,
+            description: newProduct.description,
             url: newProduct.url,
         };
 

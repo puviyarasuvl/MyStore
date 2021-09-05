@@ -1,0 +1,23 @@
+.pdetails {
+    min-height: 441px;
+}
+
+.qty-input {
+    margin-bottom: 16px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+h6 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+input {
+    text-align: center;
+}

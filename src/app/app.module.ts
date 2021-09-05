@@ -29,6 +29,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteProductComponent } from './components/delete-product/delete-product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +51,7 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
         AdminComponent,
         AddProductComponent,
         DeleteProductComponent,
+        ProductDetailsComponent,
     ],
     imports: [
         BrowserModule,

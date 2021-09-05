@@ -1,6 +1,10 @@
 <div class="card">
     <span class="border border-dark">
-        <img src="{{ product.url }}" class="card-img-top" alt="..." />
+        <a
+            routerLink="/product-details"
+            [queryParams]="{ productId: product.id }"
+            ><img src="{{ product.url }}" class="card-img-top" alt="..."
+        /></a>
     </span>
     <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>

@@ -9,3 +9,7 @@ img {
 .qty-input {
     margin-bottom: 16px;
 }
+
+input {
+    text-align: center;
+}
