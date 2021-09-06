@@ -6,3 +6,8 @@ export type Product = {
     description: string;
     url: string;
 };
+
+export type ProductCart = {
+    productId: number;
+    quantity: number;
+};

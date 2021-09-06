@@ -30,6 +30,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteProductComponent } from './components/delete-product/delete-product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderSuccessComponent } from './pages/order-success/order-success.component';
 
 @NgModule({
     declarations: [
@@ -52,6 +55,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
         AddProductComponent,
         DeleteProductComponent,
         ProductDetailsComponent,
+        CartItemComponent,
+        CheckoutComponent,
+        OrderSuccessComponent,
     ],
     imports: [
         BrowserModule,
@@ -68,6 +74,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
                     `${env.dev.serverUrl}/api/products/addProduct`,
                     `${env.dev.serverUrl}/api/products/deleteProduct/*`,
                     `${env.dev.serverUrl}/api/orders/addProduct`,
+                    `${env.dev.serverUrl}/api/orders/updateQty`,
+                    `${env.dev.serverUrl}/api/orders/updateStatus`,
+                    `${env.dev.serverUrl}/api/orders/removeProduct/*`,
                     `${env.dev.serverUrl}/api/dashboard/cart`,
                 ],
             },
