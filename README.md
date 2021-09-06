@@ -1,27 +1,31 @@
 # MyStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+## Description about the applicaion
 
-## Development server
+    Angular application (e-commerce website) for Full Stack JavaScript Developer Nanodegree Program.
+    This application connects with a backend (express server).
+    This application allows user to browse available products, add products to cart and complete the purchase.
+    This application allows admin user to add new product to the product list and delete an existing product from product list.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Server Setup
 
-## Code scaffolding
+    Clone the backend repo from this git repo (https://github.com/puviyarasuvl/MyStoreBackend)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Run below commands to setup docker and start the server
 
-## Build
+        -   npm install
+        -   docker-compose up
+        -   npm run start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    docker-compose up, will create the docker container and setup db with initial values. Used a init script to create dev and test databases. While pushing the script to git it replaced all LF as CRLF. So while running the 'docker-compose up' if the script gave any error please open the scipt in any linux editor and rewrite the method. I dont have other better solution now. Sorry for that.
 
-## Running unit tests
+## Starting Angular application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    Run "npm install" to install the required packages.
+    From root of the MyStore run "ng server" to start the angular application.
 
-## Running end-to-end tests
+## Ports
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    express port : localhost:3000
+    docker port  : localhost:5432
+    angular port : localhost:4200
