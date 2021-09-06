@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Order, OrderDetails, OrderProduct } from '../models/order';
+import {
+    CompletedOrderDetails,
+    Order,
+    OrderDetails,
+    OrderProduct,
+} from '../models/order';
 import { environment as env } from 'src/environments/environment';
 import { ProductCart } from '../models/product';
 
@@ -68,6 +73,13 @@ export class CartService {
         return this.httpClient.patch<Order>(
             `${env.dev.serverUrl}/api/orders/updateStatus`,
             body
+        );
+    }
+
+    completedOrders(userId: string): Observable<CompletedOrderDetails> {
+        return this.httpClient.get<CompletedOrderDetails>(
+            `${env.dev.serverUrl}/api/dashboard/orders`,
+            { params: { userId: userId } }
         );
     }
 }

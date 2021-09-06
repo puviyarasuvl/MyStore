@@ -78,6 +78,7 @@ import { OrderSuccessComponent } from './pages/order-success/order-success.compo
                     `${env.dev.serverUrl}/api/orders/updateStatus`,
                     `${env.dev.serverUrl}/api/orders/removeProduct/*`,
                     `${env.dev.serverUrl}/api/dashboard/cart`,
+                    `${env.dev.serverUrl}/api/dashboard/orders`,
                 ],
             },
         }),

@@ -26,3 +26,21 @@ export type OrderDetails = {
         }
     ];
 };
+
+interface Product {
+    productId: number;
+    quantity: number;
+}
+
+interface CompletedOrder {
+    orderId: number;
+    orderStatus: string;
+    total: number;
+    createdDate: string;
+    products: Product[];
+}
+
+export interface CompletedOrderDetails {
+    userId: string;
+    orders: CompletedOrder[];
+}
