@@ -18,9 +18,16 @@
                             min="0"
                             max="100"
                             [(ngModel)]="productCart.quantity"
-                            (input)="qty.emit(productCart)"
+                            (ngModelChange)="qty.emit(productCart)"
                         />
                         <br />
+
+                        <button
+                            class="btn btn-danger"
+                            (click)="removeItem.emit(productCart)"
+                        >
+                            Remove item
+                        </button>
                     </form>
                 </div>
             </div>

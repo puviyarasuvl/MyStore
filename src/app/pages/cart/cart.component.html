@@ -18,10 +18,7 @@
             class="close"
             data-dismiss="alert"
             aria-label="Close"
-            (click)="resetGetError()"
-        >
-            <span aria-hidden="true">&times;</span>
-        </button>
+        ></button>
     </div>
 
     <div
@@ -47,6 +44,7 @@
                 <app-cart-item
                     [productCart]="product"
                     (qty)="updateQuantity($event)"
+                    (removeItem)="removeProduct($event)"
                 ></app-cart-item>
             </div>
         </div>

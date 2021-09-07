@@ -11,6 +11,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class CartItemComponent implements OnInit {
     @Input() productCart: ProductCart;
     @Output() qty = new EventEmitter();
+    @Output() removeItem = new EventEmitter();
+
     product: Product;
     getError: string = '';
 

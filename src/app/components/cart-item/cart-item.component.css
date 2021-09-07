@@ -6,3 +6,7 @@ img {
 .card-body {
     padding-left: 50px;
 }
+
+input {
+    margin-bottom: 10px;
+}

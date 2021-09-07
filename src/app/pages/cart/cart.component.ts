@@ -68,10 +68,6 @@ export class CartComponent implements OnInit {
         });
     }
 
-    resetGetError(): void {
-        this.getError = '';
-    }
-
     resetUpdateError(): void {
         this.updateError = '';
     }
@@ -102,5 +98,19 @@ export class CartComponent implements OnInit {
                 },
             });
         }
+    }
+
+    removeProduct(productCart: ProductCart) {
+        this.spinnerService.show();
+        this.cartSerivce.removeProduct(this.email, productCart).subscribe({
+            next: (_res) => {
+                this.showCart();
+                this.spinnerService.hide();
+            },
+            error: (error) => {
+                this.updateError = error.message;
+                this.spinnerService.hide();
+            },
+        });
     }
 }
